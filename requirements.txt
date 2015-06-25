@@ -1,0 +1,5 @@
+pygame===1.9.1release
+pygobject==3.16.2
+PyOpenGL==3.1.0
+pyxdg==0.25
+Rabbyt==0.8.3
