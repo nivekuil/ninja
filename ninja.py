@@ -228,7 +228,7 @@ class CharacterSprite:
 
         self.name = 'CharacterSprite'
 
-        self.image = Sprite('ninja.png')
+        self.image = Sprite('assets/ninja.png')
         self.image.shape = (0, 0, 0, 0)
 
     def set_cell(self, frame, action):
@@ -540,16 +540,16 @@ class Level:
         self.projectiles = []
 
     def build(self):
-        #layout = load_image('level1layout.png')
-        #level = Background((0,0), 'level1.png', 1, 1)
-        #background = Background((0,0), 'background1.png', 15, 15)
+        layout = load_image('assets/level1layout.png')
+        level = Background((0, 0), 'assets/level1.png', 1, 1)
+        background = Background((0, 0), 'assets/background1.png', 15, 15)
         #layout = load_image('henesyslayout.png')
         #level = Background((0,0), 'henesys.png', 1,1)
         #layout = load_image('citylevellayout.png')
         #level = Background((0,0), 'citylevel.png',1, 1)
-        layout = load_image('level3layout.png')
-        level = Background((0, 0), 'level3.png', 1, 1)
-        background = Background((0, 0), 'background3.png', 20, 20)
+        #layout = load_image('level3layout.png')
+        #level = Background((0, 0), 'level3.png', 1, 1)
+        #background = Background((0, 0), 'background3.png', 20, 20)
 
         self.backgrounds = [background, level]
 
@@ -667,16 +667,18 @@ class Player:
         if name == 'Ninja':
             self.abilities = [
                 ThrowKnifeAbility(), DashAbility(), PounceAbility()]
-            self.buttons = [SkillButtonSprite((-250, -600), 'button_throwknife.png'),
-                            SkillButtonSprite((-250, -520), 'button_dash.png'),
-                            SkillButtonSprite((-250, -440), 'button_dash.png')]
+            self.buttons = [SkillButtonSprite((-250, -600), 'assets/button_throwknife.png'),
+                            SkillButtonSprite(
+                                (-250, -520), 'assets/button_dash.png'),
+                            SkillButtonSprite((-250, -440), 'assets/button_dash.png')]
 
-            self.cooldownbuttons = [ButtonCooldownSprite(self.buttons[0].pos, 'button_throwknifecd.png',
-                                                         64 / self.abilities[0].maxcooldown),
-                                    ButtonCooldownSprite(self.buttons[1].pos, 'button_dashcd.png',
-                                                         64 / self.abilities[1].maxcooldown),
-                                    ButtonCooldownSprite(self.buttons[2].pos, 'button_dashcd.png',
-                                                         64 / self.abilities[2].maxcooldown)]
+            self.cooldownbuttons = [
+              ButtonCooldownSprite(self.buttons[0].pos, 'assets/button_throwknifecd.png',
+                                   64 / self.abilities[0].maxcooldown),
+              ButtonCooldownSprite(self.buttons[1].pos, 'assets/button_dashcd.png',
+                                   64 / self.abilities[1].maxcooldown),
+              ButtonCooldownSprite(self.buttons[2].pos, 'assets/button_dashcd.png',
+                                   64 / self.abilities[2].maxcooldown)]
 
             for i in self.buttons:
                 event = SpriteAddEvent(i, i.pos)
@@ -1293,7 +1295,7 @@ class ThrowKnifeSprite:
                        ((0, 4, 16, 0), (0, 3 / 4, 1, 0))]
         self.leftFrames = [((0, 6, 16, 0), (1, 1, 0, 5 / 8)),
                            ((0, 4, 16, 0), (1, 3 / 4, 0, 0))]
-        self.image = Sprite('throwknife.png')
+        self.image = Sprite('assets/throwknife.png')
         self.image.shape = (0, 0, 0, 0)
 
         self.frame = 0
