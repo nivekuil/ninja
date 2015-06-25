@@ -1,0 +1,3 @@
+A sidescrolling platformer where you control a ninja who can wall jump, dash, throw a knife, and punch things.  There's nothing to punch though, since this is a physics engine/sandbox that I made to become more familiar with design patterns, specifically MVC.
+
+[[screenshot.png]]
